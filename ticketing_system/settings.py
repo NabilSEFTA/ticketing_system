@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure--uh39!t5jbiwo1fi)evojuq6z9l**1q1-gncbmzh=9vqevfty*
 DEBUG = True
 
 STATIC_URL = '/STATIC/'
-MEDIA_ROOT =  os.path.join(os.path.dirname(BASE_DIR), 'staticFile')
+STATIC_ROOT =  os.path.join(os.path.dirname(BASE_DIR), 'staticFile')
 
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'media')
 
