@@ -26,6 +26,9 @@ SECRET_KEY = 'django-insecure--uh39!t5jbiwo1fi)evojuq6z9l**1q1-gncbmzh=9vqevfty*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+STATIC_URL = '/STATIC/'
+MEDIA_ROOT =  os.path.join(os.path.dirname(BASE_DIR), 'staticFile')
+
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'media')
 
 # URL used to access the media
