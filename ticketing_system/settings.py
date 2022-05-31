@@ -34,7 +34,7 @@ MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'media')
 # URL used to access the media
 MEDIA_URL = '/media/'
 
-ALLOWED_HOSTS = ['ticketing-system2.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['ticketing-system6.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
