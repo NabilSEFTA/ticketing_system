@@ -48,13 +48,12 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
     'ticketsManagement',
     'corsheaders',
     'rest_framework',
     'django.contrib.staticfiles',   
-       'cloudinary_storage',
-       'cloudinary',
+    'cloudinary_storage',
+    'cloudinary',
 ]
 CLOUDINARY_STORAGE = {
              'CLOUD_NAME': 'dabxy0rno',
