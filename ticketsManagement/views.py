@@ -4,7 +4,7 @@ from django.http import HttpRequest, HttpResponse, JsonResponse
 from django.shortcuts import render
 from ticketsManagement.models import EtatTicket, Ticket
 from datetime import datetime
-from ticketsManagement.serializers import TicketSerializer,EtatTicketSerializer
+from ticketsManagement.ticketSerializers import TicketSerializer,EtatTicketSerializer
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
 from django.db.models import Q
