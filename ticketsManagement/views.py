@@ -77,8 +77,18 @@ def createEtatTicket(request) :
 
 def getEtatTicket(request):
     etatsTicket = EtatTicket.objects.all()
+    print(etatsTicket )
     serializedEtatsTicket = EtatTicketSerializer(etatsTicket,many = True)
     
     return JsonResponse(serializedEtatsTicket.data,safe=False)
 
+@csrf_exempt
+def UpdateEtatTicket(request) :
+    stream = io.BytesIO(request.body)
+    data = JSONParser().parse(stream)
+    EtatTicket = EtatTicketSerializer(data = data)
+    if (EtatTicket.is_valid() ) :
+        EtatTicket.save()
+        return JsonResponse(EtatTicket.validated_data)
+    return JsonResponse({'status':'false','message':'data is not valid !'}, status=500) 
 

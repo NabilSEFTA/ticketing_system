@@ -11,7 +11,12 @@ class EtatTicketSerializer(serializers.Serializer) :
     intituleEtatTicket = serializers.CharField()
     
     def create(self, validated_data):
+        newEtatTicket = EtatTicket(**validated_data)
+        newEtatTicket.save()
         return EtatTicket(**validated_data)
+
+    def update(self, instance, validated_data):
+        return super().update(instance, validated_data)
 
 class TicketSerializer(serializers.Serializer):
     idTicket = serializers.IntegerField(read_only = True,)

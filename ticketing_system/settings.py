@@ -34,7 +34,7 @@ MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'media')
 # URL used to access the media
 MEDIA_URL = '/media/'
 
-ALLOWED_HOSTS = ['ticketing-system6.herokuapp.com', '127.0.0.1']
+CORS_ORIGIN_ALLOW_ALL = True
 
 
 # Application definition
@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ticketsManagement',
     'corsheaders',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -58,6 +59,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    
+
 ]
 
 ROOT_URLCONF = 'ticketing_system.urls'
