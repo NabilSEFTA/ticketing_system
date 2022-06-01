@@ -16,7 +16,7 @@ class Ticket(models.Model) :
     remarquesTicket = models.TextField(null=True)
     assistante = models.CharField(max_length=255,null=True)
     etatTicket = models.ForeignKey(EtatTicket,on_delete=models.DO_NOTHING)
-    file = models.FileField(upload_to='tickets',null=True)
+    file = models.FileField(upload_to='tickets/',null=True)
 
     """ def __init__(self,intituleTicket,descriptionTicket,dateLimitTicket):
         self.intituleTicket = intituleTicket

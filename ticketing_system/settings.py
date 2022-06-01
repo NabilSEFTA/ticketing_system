@@ -26,19 +26,21 @@ SECRET_KEY = 'django-insecure--uh39!t5jbiwo1fi)evojuq6z9l**1q1-gncbmzh=9vqevfty*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-STATIC_URL = '/STATIC/'
+
 STATIC_ROOT =  os.path.join(os.path.dirname(BASE_DIR), 'staticFile')
 
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'media')
 
 # URL used to access the media
-MEDIA_URL = 'media/'
+MEDIA_URL = '/media/'
 
 CORS_ORIGIN_ALLOW_ALL = True
 
 ALLOWED_HOSTS = [ '127.0.0.1','ticketing-system6.herokuapp.com']
 
 # Application definition
+
+DEFAULT_FILE_STORAGE='cloudinary_storage.storage.MediaCloudinaryStorage'
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -50,7 +52,16 @@ INSTALLED_APPS = [
     'ticketsManagement',
     'corsheaders',
     'rest_framework',
+    'django.contrib.staticfiles',   
+       'cloudinary_storage',
+       'cloudinary',
 ]
+CLOUDINARY_STORAGE = {
+             'CLOUD_NAME': 'your_cloud_name',
+             'API_KEY': 'your_api_key',
+             'API_SECRET': 'your_api_secret'
+            }
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
