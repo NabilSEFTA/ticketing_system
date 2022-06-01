@@ -57,9 +57,9 @@ INSTALLED_APPS = [
        'cloudinary',
 ]
 CLOUDINARY_STORAGE = {
-             'CLOUD_NAME': 'your_cloud_name',
-             'API_KEY': 'your_api_key',
-             'API_SECRET': 'your_api_secret'
+             'CLOUD_NAME': 'dabxy0rno',
+             'API_KEY': '446139986221661',
+             'API_SECRET': 'FnCbnMyuCUlRJ_9Zxh1X9vEGjJg'
             }
 
 
