@@ -40,7 +40,7 @@ ALLOWED_HOSTS = [ '127.0.0.1','ticketing-system6.herokuapp.com']
 
 # Application definition
 
-DEFAULT_FILE_STORAGE='cloudinary_storage.storage.MediaCloudinaryStorage'
+DEFAULT_FILE_STORAGE='cloudinary_storage.storage.RawMediaCloudinaryStorage'
 
 INSTALLED_APPS = [
     'django.contrib.admin',
