@@ -1,6 +1,3 @@
-from dataclasses import field
-from pyexpat import model
-from tkinter.tix import Tree
 from rest_framework import serializers
 from ticketsManagement.models import EtatTicket, Ticket
 
