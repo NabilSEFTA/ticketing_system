@@ -32,11 +32,11 @@ STATIC_ROOT =  os.path.join(os.path.dirname(BASE_DIR), 'staticFile')
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'media')
 
 # URL used to access the media
-MEDIA_URL = '/media/'
+MEDIA_URL = 'media/'
 
 CORS_ORIGIN_ALLOW_ALL = True
 
-ALLOWED_HOSTS = [ 'ticketing-system6.herokuapp.com']
+ALLOWED_HOSTS = [ '127.0.0.1','ticketing-system6.herokuapp.com']
 
 # Application definition
 

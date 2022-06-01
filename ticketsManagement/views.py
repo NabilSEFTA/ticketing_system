@@ -49,7 +49,7 @@ def updateTicket(request) :
     print() """
     id = data['idTicket']
     ticketInstance = Ticket.objects.get(idTicket = id)
-    ticketInstance.file = request.FILES['file']
+    ticketInstance.file = request.FILES['file'] if request.FILES else None
     ticketInstanceModified = TicketSerializer(ticketInstance,data = data)
     
     if (ticketInstanceModified.is_valid() ) :
