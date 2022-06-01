@@ -36,6 +36,7 @@ MEDIA_URL = '/media/'
 
 CORS_ORIGIN_ALLOW_ALL = True
 
+ALLOWED_HOSTS = [ 'ticketing-system6.herokuapp.com']
 
 # Application definition
 
