@@ -59,8 +59,7 @@ def updateTicket(request) :
     return JsonResponse({'status':'false','message':'data is not valid !'}, status=500) 
 
 def deleteTickets(request) :
-    for i in range(1,len(Ticket.objects.all())+3) :
-        Ticket.objects.filter(idTicket=i).delete()
+    Ticket.objects.all().delete()
     return JsonResponse({'message' : 'ok'})
 
 @csrf_exempt
