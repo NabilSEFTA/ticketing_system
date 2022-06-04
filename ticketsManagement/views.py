@@ -10,7 +10,7 @@ from rest_framework.parsers import JSONParser
 from django.db.models import Q
 import json
 
-
+""" returns set of tickets filtered or not, depending on request parameters """
 def getTickets(request) :
     print()
     if(request.GET and request.GET['view']) :
@@ -20,6 +20,7 @@ def getTickets(request) :
     response = TicketSerializer(tickets,many=True).data
     return JsonResponse(response,safe=False)
 
+""" returns a new ticket object or, an error when there are missing information """
 @csrf_exempt
 def createTicket(request) :
     stream = io.BytesIO(request.body)
@@ -31,22 +32,14 @@ def createTicket(request) :
         print(newTicket.idTicket)
         serializedNewTicket = TicketSerializer(newTicket)
         return JsonResponse(serializedNewTicket.data)
-
     return JsonResponse({'status':'false','message':'data is not valid !'}, status=500) 
 
+""" update an existing ticket object with new data """
 @csrf_exempt
 def updateTicket(request) :
     
     data = request.POST['ticket']
     data = json.loads(data)
-    """ print()
-    print()
-    print(data['idTicket'])
-    print()
-    print()
-    print(request.FILES['file'])
-    print()
-    print() """
     id = data['idTicket']
     ticketInstance = Ticket.objects.get(idTicket = id)
     ticketInstance.file = request.FILES['file'] if request.FILES else None
@@ -58,10 +51,11 @@ def updateTicket(request) :
         return JsonResponse(ticketInstanceModified.data)
     return JsonResponse({'status':'false','message':'data is not valid !'}, status=500) 
 
-def deleteTickets(request) :
+""" def deleteTickets(request) :
     Ticket.objects.all().delete()
-    return JsonResponse({'message' : 'ok'})
+    return JsonResponse({'message' : 'ok'}) """
 
+""" returns a new ticket state object """
 @csrf_exempt
 def createEtatTicket(request) :
     stream = io.BytesIO(request.body)
@@ -73,7 +67,7 @@ def createEtatTicket(request) :
     return JsonResponse({'status':'false','message':'data is not valid !'}, status=500) 
 
 
-
+""" returns all ticket state objects """
 def getEtatTicket(request):
     etatsTicket = EtatTicket.objects.all()
     print(etatsTicket )
@@ -81,6 +75,7 @@ def getEtatTicket(request):
     
     return JsonResponse(serializedEtatsTicket.data,safe=False)
 
+""" updates an existing ticket state with new data or, returns an error when there are missing information """
 @csrf_exempt
 def UpdateEtatTicket(request) :
     stream = io.BytesIO(request.body)

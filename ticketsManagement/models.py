@@ -2,11 +2,12 @@ from datetime import date
 from pyexpat import model
 from django.db import models
 
+""" ticket state model """
 class EtatTicket(models.Model):
     idEtatTicket = models.IntegerField(primary_key=True)
     intituleEtatTicket = models.CharField(max_length=255)
     
-
+""" ticket model """
 class Ticket(models.Model) :
     idTicket = models.AutoField(primary_key=True)
     intituleTicket = models.CharField(max_length=255,null=False)
